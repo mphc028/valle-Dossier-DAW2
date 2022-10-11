@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Activitat 3: Matrius i missatges</title>
+    <link rel="stylesheet" href="valleImanol_act003.css">
+</head>
+
+<body>
+
+    <section>
+        <article>
+            <h1>Gestor de vectors</h1>
+        </article>
+        <article>
+            <label for="elementAAfegir">Item: </label>
+            <input type="text" id="elementAAfegir"></input>
+        </article>
+        <article>
+            <input type="button" id="btAfegeix" value="+ Afegeix" onclick="afegeixElementAMatriu();"></input>
+            <input type="button" id="btMostra" value="👁 Mostra" onclick="mostraElementsMatriu();"></input>
+            <input type="button" id="btNeteja" value="🗑 Neteja" onclick="netejaMatriu();"></input>
+        </article>
+        <article>
+            <label for="update" id="labelUpdate">Actualitzar en temps real?</label>
+            <input type="checkbox" id="update" name="update" value="update"></input>
+        </article>
+        <p><span id="message">⠀</span></p>
+        <nav>
+            <ul><span id="resultat"></span></ul>
+        </nav>
+        <script src="valleImanol_act003.js"></script>
+    </section>
+
+
+</body>
+
+</html>

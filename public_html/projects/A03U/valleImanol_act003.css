@@ -1,0 +1,190 @@
+:root{
+    --side-margin: 400px;
+}
+
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html
+{
+    color: white;
+    background-color: rgb(42, 42, 46);
+    font-family: 'Open Sans', sans-serif;
+    font-size:x-large;
+}
+
+.cursive{
+    font-style: italic;
+}
+
+.red
+{
+    color: white;
+    background-color: rgb(228, 45, 88);
+    font-size: large;
+    border: none;
+}
+
+.red:hover
+{
+    background-color: rgb(186, 13, 85);
+    font-size: large;
+    border: none;
+}
+.white
+{
+    color: white;
+    background-color: rgb(18, 101, 255);
+    font-size: large;
+    border: none;
+}
+
+.white:hover
+{
+    color: white;
+    background-color: rgb(44, 32, 174);
+    font-size: large;
+    border: none;
+}
+
+
+
+
+
+input[type="button"]
+{
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 10px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+
+  
+
+input[type="text"]
+{
+    font-size: large;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    color: rgb(42, 42, 46);
+    background-color: rgb(218, 207, 207);
+}
+
+input[type="text"]:focus
+{
+     color: rgb(157, 157, 157);
+    background-color: rgb(42, 42, 46);
+}
+
+
+input[type="checkbox"]
+{
+    cursor: pointer;
+}
+
+nav
+{
+    background-color: rgb(42, 42, 46);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+article
+{
+    margin-bottom: 30px;
+}
+
+ul
+{
+    overflow-y: scroll;
+    height:20%; 
+}
+
+section
+{
+    border-radius: 10px;
+    padding: 30px;
+    border: 1em;
+    background-color: rgb(23, 23, 23);
+    margin: 100px 0px 100px 0px;
+}
+
+p
+{
+    text-align: justify;
+    margin-top: 10px;
+}
+
+
+section
+{
+    margin-right: var(--side-margin);
+    margin-left: var(--side-margin);
+}
+
+@keyframes vanish{
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity: 1;
+    }
+    80%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+
+    }
+  }
+
+  @keyframes appear{
+    0%{
+      opacity: 0;
+
+    }
+    100%{
+      opacity: 1;
+
+    }
+  }
+  
+.vanish{
+    opacity: 1;
+    animation-name: vanish;
+    animation-duration: 5000ms;
+    animation-fill-mode: forwards;
+}
+
+.appear{
+    opacity: 0;
+    animation-name: appear;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }

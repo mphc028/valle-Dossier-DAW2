@@ -1,0 +1,8 @@
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW PWPROTECTID:TeqetuvuDa
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /home/u117678300/public_html/x/.htpasswd
+Require valid-user
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE TeqetuvuDa:PWPROTECTID
+

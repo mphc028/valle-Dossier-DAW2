@@ -1,0 +1,97 @@
+:root
+{
+    --normal: white;
+    --hover: grey;
+    --dis: rgba(194, 194, 194, 0.341);
+    --dishover: rgba(194, 194, 194, 0.667);
+}
+
+.laMevaClasse {
+    font-family: 'Noto Emoji', sans-serif;
+    background-color: transparent;
+    border:none;
+    color: var(--normal);
+    font-size: 60px;
+    padding-bottom: 10px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.laMevaClasse:hover {
+    color: var(--hover);
+}
+
+.buttonActive{
+    
+    font-family: 'Noto Emoji', sans-serif;
+    background-color: transparent;
+    border:none;
+    color: var(--dis);
+    font-size: 60px;
+    padding-bottom: 10px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.buttonActive:hover {
+    color: var(--dishover);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#wallpaper {
+    background-image: url("./img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+#date_cont {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    animation: slideInFast 0.25s 0.25s linear forwards;
+    transform: translateY(150%);
+    transition: all 0.6s ease both;
+}
+
+
+
+#rellotge {
+    font-size: 8em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+    margin-left: -15px;
+    padding: 0;
+}
+
+#missatge {
+    font-size: 2.5em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #fff;
+    margin-top: -0.6em;
+    /*   padding-left: 0.4em; */
+}
