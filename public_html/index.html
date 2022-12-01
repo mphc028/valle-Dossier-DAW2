@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -40,7 +42,81 @@
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Login</a>
+          <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Register</a>
+          <a class="nav-link logged-in" href="#" id="logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h3>SignUp</h3>
+          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+          <form id="signup-form">
+
+            <label for="email">Email:</label>
+            <input type="text" id="signup-email" class="form-control mb-3" placeholder="Title" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="signup-password" class="form-control mb-3" placeholder="Password" required>
+
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSignin"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>SignIn</h3>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="login-form">
+            <label for="email">Email</label>
+            <input type="text" id="login-email" class="form-control mb-3" placeholder="Title" required>
+            <label for="password">Password:</label>
+            <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
+
+            <button type="submit" class="btn btn-success w-100 mb-4">Login</button>
+
+            <button type="button" class="btn btn-info" id="googleLogin">Google</button>
+            <button type="button" class="btn btn-primary" id="facebookLogin">Facebook</button>
+            <button type="button" class="btn btn-dark" id="githubLogin">Github</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -55,33 +131,27 @@
           <a href="https://twitter.com/wade_dev" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="https://www.pinterest.es/mphc028/_created/" class="facebook"><i class="bx bxl-pinterest"></i></a>
           <a href="https://www.instagram.com/pixelwade028/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.youtube.com/channel/UCLCQNxXExVRbgn7AKOCuhbA" class="google-plus"><i class="bx bxl-youtube"></i></a>
-          <a href="https://www.linkedin.com/in/imanol-valle-p%C3%A9rez-3043911b6/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.youtube.com/channel/UCLCQNxXExVRbgn7AKOCuhbA" class="google-plus"><i
+              class="bx bxl-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/imanol-valle-p%C3%A9rez-3043911b6/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="#resume" class="logged-in nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="logged-in nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#services" class="logged-in nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#contact" class="logged-in nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Imanol Valle</h1>
-      <p>I'm a <span class="typed" data-typed-items="Designer, Developer, Freelancer, VFX Artist"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
+
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -89,7 +159,8 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>19 year old Web Develeper, Generalist Designer and Videogame Creator from Barcelona. Currently studying Web Application Development.
+          <p>19 year old Web Develeper, Generalist Designer and Videogame Creator from Barcelona. Currently studying Web
+            Application Development.
           </p>
         </div>
 
@@ -114,660 +185,685 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>19</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Education:</strong> <span>Web Application Developer / Software Engineer</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Education:</strong> <span>Web Application Developer /
+                      Software Engineer</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span>
+                  </li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Status</strong> <span>Able to work</span></li>
                 </ul>
               </div>
             </div>
             <p>
-              Investing my resources on learning new things related with web delepment, videogame programming and visual effects.
+              Investing my resources on learning new things related with web delepment, videogame programming and visual
+              effects.
             </p>
           </div>
         </div>
+        <!-- ======= Experience Section ======= -->
+        <section id="facts" class="logged-in facts">
+          <div class="container">
 
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Experience Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Experience</h2>
-          <p>Experienced in agile methodology and working with small companies</p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-unity"></i>
-              <span>Unity</span>
-              <p><strong>Unity</strong> 5 years of experience using it for developing games.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-blender"></i>
-              <span>Blender</span>
-              <p><strong>Blender</strong> More than two years of experience using it mainly for animations and visual effects.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-godotengine"></i>
-              <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
-              <span>Godot</span>
-              <p><strong>Godot</strong> General experience about the features of this software.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-cplusplus"></i>
-              <span>C++ </span>
-              <p><strong>C++</strong> Experience with OpenGL and GLUT libraries.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-c"></i>
-              <span>C</span>
-              <p><strong>C</strong> Learned in my year studying Software Engineering.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-csharp"></i>
-              <span>C#</span>
-              <p><strong>C#</strong> Used for developing games with Unity and the XNA Framework.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-java"></i>
-              <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
-              <span>Java</span>
-              <p><strong>Java</strong> Experienced with Java.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-github"></i>
-              <span>GitHub </span>
-              <p><strong>GitHub</strong> Used to use GitHub when working on teams.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-javascript"></i>
-              <span>JS</span>
-              <p><strong>JavaScript</strong> Basic knowledge of JavaScript.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-php"></i>
-              <span>PHP</span>
-              <p><strong>PHP</strong> Basic knowledge of PHP.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-mysql"></i>
-              <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
-              <span>MySQL</span>
-              <p><strong>MySQL</strong> Intermediete knowledge. </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-python"></i>
-              <span>Python</span>
-              <p><strong>Python</strong> Basic knowledge of python. Used for Rasperry programming. </p>
-            </div>
-          </div>
-          
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-adobephotoshop"></i>
-              <span>Ps</span>
-              <p><strong>Photoshop</strong> 4 years of experience using Photoshop for graphic design. </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-adobepremiere"></i>
-              <span>Pr</span>
-              <p><strong>Premiere</strong> 3 years of experience editing with Premiere.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-adobeaftereffects"></i>
-              <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
-              <span>Ae</span>
-              <p><strong>After Effects</strong> Used to complement Premiere tasks.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-adobeillustrator"></i>
-              <span>Ai </span>
-              <p><strong>Illustrator</strong> Used for Branding and Vectorial Design.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-microsoftword"></i>
-              <span>Word</span>
-              <p><strong>Word</strong> Used for various pourpuses.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-microsoftexcel"></i>
-              <span>Excel</span>
-              <p><strong>Excel</strong> Used for database data visualization and operations tables.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i  style="line-height:1 !important; color:#000000" class="ico ico-microsoftpowerpoint"></i>
-              <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
-              <span>PowerPoint</span>
-              <p><strong>PowerPoint</strong> Experience creating templates.</p>
-            </div>
-          </div>
-
-
-
-        </div>
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-        </div>
-
-        <h4 data-aos="fade-up">Web development and programming</h4>
-
-        <div class="row skills-content">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">CSS <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
-              <span class="skill">C++ <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">C# <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Java <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h4 data-aos="fade-up">Image and Video Editing</h4>
-
-        <div class="row skills-content">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
-              <span class="skill">Photoshop <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Premiere <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
-              <span class="skill">After Effects <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Illustrator <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h4 data-aos="fade-up">Visual Effects and Animation</h4>
-
-        <div class="row skills-content">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
-              <span class="skill">Blender VFX <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
-              <span class="skill">Blender Animation <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>Passionate web developer, designer and videogame creator.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>IMANOL VALLE</h4>
-              <p><em>- Experienced on web development.</em></p>
-              <p><em>- More than 5 years of experience creating indie videogames with Unity Engine.</em></p>
-              <p><em>- Visual Effects Artist, 3D Modeler, Product Animator and Character Animator.</em></p>
-              <p><em>- Video Editor. </em></p>
-              <p><em>- Pixel Artist and 2D Animator.</em></p>
-              <h4>CONTACT AND LOCATION</h4>
-              <ul>
-                <li>Barcelona</li>
-                <li>123456789</li>
-                <li>imanol@anota.me</li>
-              </ul>
+            <div class="section-title">
+              <h2>Experience</h2>
+              <p>Experienced in agile methodology and working with small companies</p>
             </div>
 
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Web Application Development</h4>
-              <h5>2021-2023</h5>
-              <p><em>Escola Ginebró, Barcelona</em></p>
-              <p>I wanted to become a professional Web Developer, so I decided to study Web Application Development</p>
-            </div>
-            <div class="resume-item">
-              <h4>Software Engineering</h4>
-              <h5>2020 - 2021</h5>
-              <p><em>UOC, Barcelona</em></p>
-              <p>I coursed one year of Sofware Engineering. I learnt the C Programming Lenguage and Agile Methodology. I decided to pause my degree because I wanted to work in the Web Application field while I study Software Engineering</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Freelancer Experience</h3>
-            <div class="resume-item">
-              <h4>Video Editor</h4>
-              <h5>2021 - Present</h5>
-              <p><em>Freelance work as Video Editor </em></p>
-              <ul>
-                <li>I edit for YouTubers and Streamers.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Pixel Artist</h4>
-              <h5>2021 - Present</h5>
-              <p><em>Freelance work as Pixel Artist</em></p>
-              <ul>
-                <li>I create videogame assets for customers.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+            <div class="row no-gutters">
 
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>My most relevant work</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-mp06">MP06</li>
-              <li data-filter=".filter-mp08">MP08</li>
-              <li data-filter=".filter-mp09">MP09</li>
-              <li data-filter=".filter-mp12">MP12</li>
-
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
-            <div class="portfolio-wrap">
-              <h2>MP06-UF1-AO1U</h2>
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="./projects/A01U/valleImanol_act_001.html"><i class="bx bx-plus"></i></a>
-                <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
-                <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
-            <div class="portfolio-wrap">
-              <h2>MP06-UF1-AO2U</h2>
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="./projects/A02U/valleImanol_act_002.html"><i class="bx bx-plus"></i></a>
-                <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
-                <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
-            <div class="portfolio-wrap">
-              <h2>MP06-UF1-AO3U</h2>
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="./projects/A03U/valleImanol_act003.html"><i class="bx bx-plus"></i></a>
-                <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
-                <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-pixelart">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 2"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-pixelart">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/vfxvideo1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/9nzkX9CAF0c" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender Showreel 2021"><i class="bx bx-play"></i></a>
-                <a href="https://www.youtube.com/watch?v=9nzkX9CAF0c&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/vfxvideo2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/pMBlqt1EN2M" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender Iron Man Animation"><i class="bx bx-play"></i></a>
-                <a href="https://www.youtube.com/watch?v=pMBlqt1EN2M&t=1s&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/vfxvideo3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/tHojQa5jbUk" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender"><i class="bx bx-play"></i></a>
-                <a href="https://www.youtube.com/watch?v=9nzkX9CAF0c&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-videogames">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gamesvideo1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/YJnFBXApo0A" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Old Videogame Demoreel"><i class="bx bx-play"></i></a>
-                <a href="https://www.youtube.com/watch?v=YJnFBXApo0A" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-videogames">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gamesvideo2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/MzKlHjeWHqY" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Layered 3D Pixel Art Software by Imanol Valle"><i class="bx bx-play"></i></a>
-                <a href="https://www.youtube.com/watch?v=MzKlHjeWHqY" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-          
-        </div> -->
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Currently I am able to offer the following services:</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-joystick"></i></div>
-            <h4 class="title"><a href="">Unity Gameplay Designer</a></h4>
-            <p class="description">Design videogame gameplay mechanics.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-controller"></i></div>
-            <h4 class="title"><a href="">Unity Gameplay Programmer</a></h4>
-            <p class="description">Prototype videogame gameplay mechanics.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-columns"></i></div>
-            <h4 class="title"><a href="">Web Developer</a></h4>
-            <p class="description">Create versatile web pages for customers. </p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-film"></i></div>
-            <h4 class="title"><a href="">Video Editor</a></h4>
-            <p class="description">Edit videos of all kinds.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-badge-3d-fill"></i></div>
-            <h4 class="title"><a href="">Visual Effects Artist</a></h4>
-            <p class="description">Create visual effects for movies and ads.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-image-fill"></i></div>
-            <h4 class="title"><a href="">Graphic Design</a></h4>
-            <p class="description">Branding and general design.</p>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Feel free to send me an email.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Barcelona, Spain</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@imanol.xyz</p>
-              </div>
-
-              <iframe src="https://maps.google.com/maps?q=Barcelona,%20Spain&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-          <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Barcelona,%20Spain&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> -->
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-unity"></i>
+                  <span>Unity</span>
+                  <p><strong>Unity</strong> 5 years of experience using it for developing games.</p>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-blender"></i>
+                  <span>Blender</span>
+                  <p><strong>Blender</strong> More than two years of experience using it mainly for animations and
+                    visual effects.</p>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-godotengine"></i>
+                  <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
+                  <span>Godot</span>
+                  <p><strong>Godot</strong> General experience about the features of this software.</p>
+                </div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-cplusplus"></i>
+                  <span>C++ </span>
+                  <p><strong>C++</strong> Experience with OpenGL and GLUT libraries.</p>
+                </div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+
+            </div>
+
+            <div class="row no-gutters">
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-c"></i>
+                  <span>C</span>
+                  <p><strong>C</strong> Learned in my year studying Software Engineering.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-csharp"></i>
+                  <span>C#</span>
+                  <p><strong>C#</strong> Used for developing games with Unity and the XNA Framework.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-java"></i>
+                  <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
+                  <span>Java</span>
+                  <p><strong>Java</strong> Experienced with Java.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-github"></i>
+                  <span>GitHub </span>
+                  <p><strong>GitHub</strong> Used to use GitHub when working on teams.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row no-gutters">
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-javascript"></i>
+                  <span>JS</span>
+                  <p><strong>JavaScript</strong> Basic knowledge of JavaScript.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-php"></i>
+                  <span>PHP</span>
+                  <p><strong>PHP</strong> Basic knowledge of PHP.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-mysql"></i>
+                  <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
+                  <span>MySQL</span>
+                  <p><strong>MySQL</strong> Intermediete knowledge. </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-python"></i>
+                  <span>Python</span>
+                  <p><strong>Python</strong> Basic knowledge of python. Used for Rasperry programming. </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row no-gutters">
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-adobephotoshop"></i>
+                  <span>Ps</span>
+                  <p><strong>Photoshop</strong> 4 years of experience using Photoshop for graphic design. </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-adobepremiere"></i>
+                  <span>Pr</span>
+                  <p><strong>Premiere</strong> 3 years of experience editing with Premiere.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-adobeaftereffects"></i>
+                  <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
+                  <span>Ae</span>
+                  <p><strong>After Effects</strong> Used to complement Premiere tasks.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-adobeillustrator"></i>
+                  <span>Ai </span>
+                  <p><strong>Illustrator</strong> Used for Branding and Vectorial Design.</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="row no-gutters">
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-microsoftword"></i>
+                  <span>Word</span>
+                  <p><strong>Word</strong> Used for various pourpuses.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-microsoftexcel"></i>
+                  <span>Excel</span>
+                  <p><strong>Excel</strong> Used for database data visualization and operations tables.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="count-box">
+                  <i style="line-height:1 !important; color:#000000" class="ico ico-microsoftpowerpoint"></i>
+                  <!-- <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span> -->
+                  <span>PowerPoint</span>
+                  <p><strong>PowerPoint</strong> Experience creating templates.</p>
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
+        </section><!-- End Facts Section -->
 
+        <!-- ======= Skills Section ======= -->
+        <section id="skills" class="logged-in skills section-bg">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Skills</h2>
+            </div>
+
+            <h4 data-aos="fade-up">Web development and programming</h4>
+
+            <div class="row skills-content">
+              <div class="col-lg-6" data-aos="fade-up">
+                <div class="progress">
+                  <span class="skill">HTML <i class="val">100%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">CSS <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">JavaScript <i class="val">50%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="progress">
+                  <span class="skill">C++ <i class="val">70%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">C# <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Java <i class="val">75%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4 data-aos="fade-up">Image and Video Editing</h4>
+
+            <div class="row skills-content">
+              <div class="col-lg-6" data-aos="fade-up">
+                <div class="progress">
+                  <span class="skill">Photoshop <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Premiere <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="progress">
+                  <span class="skill">After Effects <i class="val">50%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Illustrator <i class="val">50%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4 data-aos="fade-up">Visual Effects and Animation</h4>
+
+            <div class="row skills-content">
+              <div class="col-lg-6" data-aos="fade-up">
+                <div class="progress">
+                  <span class="skill">Blender VFX <i class="val">85%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="progress">
+                  <span class="skill">Blender Animation <i class="val">70%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- End Skills Section -->
+
+        <!-- ======= Resume Section ======= -->
+        <section id="resume" class="resume logged-in">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Resume</h2>
+              <p>Passionate web developer, designer and videogame creator.</p>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6" data-aos="fade-up">
+                <h3 class="resume-title">Sumary</h3>
+                <div class="resume-item pb-0">
+                  <h4>IMANOL VALLE</h4>
+                  <p><em>- Experienced on web development.</em></p>
+                  <p><em>- More than 5 years of experience creating indie videogames with Unity Engine.</em></p>
+                  <p><em>- Visual Effects Artist, 3D Modeler, Product Animator and Character Animator.</em></p>
+                  <p><em>- Video Editor. </em></p>
+                  <p><em>- Pixel Artist and 2D Animator.</em></p>
+                  <h4>CONTACT AND LOCATION</h4>
+                  <ul>
+                    <li>Barcelona</li>
+                    <li>123456789</li>
+                    <li>imanol@anota.me</li>
+                  </ul>
+                </div>
+
+                <h3 class="resume-title">Education</h3>
+                <div class="resume-item">
+                  <h4>Web Application Development</h4>
+                  <h5>2021-2023</h5>
+                  <p><em>Escola Ginebró, Barcelona</em></p>
+                  <p>I wanted to become a professional Web Developer, so I decided to study Web Application Development
+                  </p>
+                </div>
+                <div class="resume-item">
+                  <h4>Software Engineering</h4>
+                  <h5>2020 - 2021</h5>
+                  <p><em>UOC, Barcelona</em></p>
+                  <p>I coursed one year of Sofware Engineering. I learnt the C Programming Lenguage and Agile
+                    Methodology. I decided to pause my degree because I wanted to work in the Web Application field
+                    while I study Software Engineering</p>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Freelancer Experience</h3>
+                <div class="resume-item">
+                  <h4>Video Editor</h4>
+                  <h5>2021 - Present</h5>
+                  <p><em>Freelance work as Video Editor </em></p>
+                  <ul>
+                    <li>I edited for YouTubers and Streamers.</li>
+                  </ul>
+                </div>
+                <div class="resume-item">
+                  <h4>Pixel Artist</h4>
+                  <h5>2021 - Present</h5>
+                  <p><em>Freelance work as Pixel Artist</em></p>
+                  <ul>
+                    <li>I created videogame assets for customers.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- End Resume Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="logged-in portfolio section-bg">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Portfolio</h2>
+              <p>My most relevant work</p>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+              <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                  <li data-filter="*" class="filter-active">All</li>
+                  <li data-filter=".filter-mp06">MP06</li>
+                  <li data-filter=".filter-mp08">MP08</li>
+                  <li data-filter=".filter-mp09">MP09</li>
+                  <li data-filter=".filter-mp012">MP12</li>
+
+                </ul>
+              </div>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
+                <div class="portfolio-wrap">
+                  <h2>MP06-UF1-AO1U</h2>
+                  <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-links">
+                    <a href="./projects/A01U/valleImanol_act_001.html"><i class="bx bx-plus"></i></a>
+                    <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
+                    <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i
+                        class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
+                <div class="portfolio-wrap">
+                  <h2>MP06-UF1-AO2U</h2>
+                  <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-links">
+                    <a href="./projects/A02U/valleImanol_act_002.html"><i class="bx bx-plus"></i></a>
+                    <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
+                    <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i
+                        class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-mp06">
+                <div class="portfolio-wrap">
+                  <h2>MP06-UF1-AO3U</h2>
+                  <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-links">
+                    <a href="./projects/A03U/valleImanol_act003.html"><i class="bx bx-plus"></i></a>
+                    <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 1"><i class="bx bx-plus"></i></a> -->
+                    <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i
+                        class="bx bx-link"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- 
+      <div class="col-lg-4 col-md-6 portfolio-item filter-pixelart">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 2"><i class="bx bx-plus"></i></a>
+            <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>2022</span></strong>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-pixelart">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pixel Art 3"><i class="bx bx-plus"></i></a>
+            <a href="https://www.instagram.com/pixelwade028/" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://imanol.xyz/">Imanol Valle</a>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/vfxvideo1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="https://www.youtube.com/embed/9nzkX9CAF0c" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender Showreel 2021"><i class="bx bx-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=9nzkX9CAF0c&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/vfxvideo2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="https://www.youtube.com/embed/pMBlqt1EN2M" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender Iron Man Animation"><i class="bx bx-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=pMBlqt1EN2M&t=1s&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://kit.fontawesome.com/6aff181dc8.js" crossorigin="anonymous"></script>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-vfx">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/vfxvideo3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="https://www.youtube.com/embed/tHojQa5jbUk" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blender"><i class="bx bx-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=9nzkX9CAF0c&ab_channel=wade028" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-videogames">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/gamesvideo1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="https://www.youtube.com/embed/YJnFBXApo0A" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Old Videogame Demoreel"><i class="bx bx-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=YJnFBXApo0A" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-videogames">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/gamesvideo2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="https://www.youtube.com/embed/MzKlHjeWHqY" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Layered 3D Pixel Art Software by Imanol Valle"><i class="bx bx-play"></i></a>
+            <a href="https://www.youtube.com/watch?v=MzKlHjeWHqY" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+      
+    </div> -->
+            </div>
+        </section><!-- End Portfolio Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="logged-in services">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Services</h2>
+              <p>Currently I am able to offer the following services:</p>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                <div class="icon"><i class="bi bi-joystick"></i></div>
+                <h4 class="title"><a href="">Unity Gameplay Designer</a></h4>
+                <p class="description">Design videogame gameplay mechanics.</p>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="bi bi-controller"></i></div>
+                <h4 class="title"><a href="">Unity Gameplay Programmer</a></h4>
+                <p class="description">Prototype videogame gameplay mechanics.</p>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="bi bi-columns"></i></div>
+                <h4 class="title"><a href="">Web Developer</a></h4>
+                <p class="description">Create versatile web pages for customers. </p>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="bi bi-film"></i></div>
+                <h4 class="title"><a href="">Video Editor</a></h4>
+                <p class="description">Edit videos of all kinds.</p>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="bi bi-badge-3d-fill"></i></div>
+                <h4 class="title"><a href="">Visual Effects Artist</a></h4>
+                <p class="description">Create visual effects for movies and ads.</p>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon"><i class="bi bi-image-fill"></i></div>
+                <h4 class="title"><a href="">Graphic Design</a></h4>
+                <p class="description">Branding and general design.</p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="logged-in contact">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Contact</h2>
+              <p>Feel free to send me an email.</p>
+            </div>
+
+            <div class="row" data-aos="fade-in">
+
+              <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                  <div class="address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>Barcelona, Spain</p>
+                  </div>
+
+                  <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>info@imanol.xyz</p>
+                  </div>
+
+                  <iframe src="https://maps.google.com/maps?q=Barcelona,%20Spain&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                </div>
+
+              </div>
+              <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Barcelona,%20Spain&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> -->
+              <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Email</label>
+                      <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="message" rows="10" required></textarea>
+                  </div>
+                  <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section><!-- End About Section -->
+
+
+
+
+        <!-- SCRIPTS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Toastify js -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="./main.js" type="module"></script>
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+          <div class="container">
+            <div class="copyright">
+              &copy; Copyright <strong><span>2022</span></strong>
+            </div>
+            <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+              Designed by <a href="https://imanol.xyz/">Imanol Valle</a>
+            </div>
+          </div>
+        </footer><!-- End  Footer -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/purecounter/purecounter.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/typed.js/typed.min.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="https://kit.fontawesome.com/6aff181dc8.js" crossorigin="anonymous"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
 
 </body>
 
