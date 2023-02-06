@@ -12,6 +12,24 @@ import './app/githubLogin.js'
 import './app/logout.js'
 import './app/postList.js'
 
+let bannerCookies = document.getElementById("cookiesbanner");
+
+function setToken()
+{
+  const date = new Date();
+  localStorage.setItem('token',date);
+}
+
+function getToken()
+{
+  return new Date(localStorage.getItem('token'));
+}
+
+function getDayMS()
+{
+  return (1000*60*60*24);
+}
+
 // list for auth state changes
 onAuthStateChanged(auth, async (user) => {
   if (user) {
@@ -26,3 +44,32 @@ onAuthStateChanged(auth, async (user) => {
     loginCheck(user);
   }
 });
+
+function shCookies()
+{
+  console.log("Cookies message should NOT appear now");
+}
+const curdate = new Date();
+
+// let banner = document.getElementById('cookies');
+
+document.getElementById("cookies").addEventListener("click", acceptCookies);
+
+function acceptCookies()
+{
+  setToken();
+  bannerCookies.style.display = "none";
+
+}
+// if (getToken()==null || (curdate-getToken())<getDayMS()*3)
+// if (getToken()==null || (curdate-getToken())<3000) //3 senconds
+
+if (getToken()==null || (curdate-getToken())<getDayMS()*3)
+{
+  shCookies();
+  bannerCookies.style.display = "none";
+}
+else
+{
+  console.log("Show cookies message");
+}

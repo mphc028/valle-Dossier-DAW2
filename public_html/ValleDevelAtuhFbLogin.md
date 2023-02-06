@@ -8,3 +8,7 @@ El formulario de registro requerirá un email y una password. Implementará el s
 
 La versión sin inciar sesión mostrará mi información menos personal, pero no mis proyectos ni mi información de contacto.
 La versión inciando sesión mostrará toda la página y habrá un botón arriba para cerrar sesión.
+
+## Desarrollo
+
+He puesto la clase logged-in a los elementos que deben ocultarse si el usuario no está logeado y logged-out a los elementos que deben mostrarse si el usuario está logedado. 

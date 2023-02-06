@@ -13,6 +13,17 @@ body {
   color: #272829;
 }
 
+.centermodal {
+  background-color: #040b143b;
+  position: absolute;
+  width: 80%;
+  padding-top: 1000px;
+  padding-bottom: 1000px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 a {
   color: #dd1468;
   /* color: #dd1468; */
