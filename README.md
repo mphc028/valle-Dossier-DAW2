@@ -113,9 +113,9 @@ Siendo el público de mi dosier una empresa que esté viendo mi curriculum, hace
 
 Además, con la creciente importancia de la accesibilidad y la regulación gubernamental sobre la accesibilidad en la web, una web accesible puede ser un factor crítico para cumplir con las normas legales y evitar posibles demandas.
 
-En cuanto a las mejoras comentandas, podemos enumerar las siguientes:
+En cuanto a las mejoras realizadas, podemos enumerar las siguientes:
 
-1. En los textos alternativos y navegación web.
+1. En los textos alternativos, títulos y navegación web.
 2. En la unificación de los menús.
 3. En la personalización de la apariencia de la web.
 4. En la accesibilidad del menú desplegable.
