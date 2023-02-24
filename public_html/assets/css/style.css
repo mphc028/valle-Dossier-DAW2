@@ -46,6 +46,19 @@ body {
   background-color: var(--color3);
 }
 
+
+
+.activePage span {
+  color: var(--color4);
+  font-weight: bold;
+}
+
+.activePage i {
+  color: var(--color4) !important;
+  font-weight: bold;
+}
+
+
 .centermodal {
   background-color: #040b143b;
   position: absolute;
